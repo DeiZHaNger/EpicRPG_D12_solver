@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2vh 4vw;
+}
+
+.waiting {
+    cursor: wait;
+}
+
+.dungeon-grid input {
+    width: 36px;
+}
+
+.player-stats input {
+    width: 72px;
+}
+
+.hidden {
+    display: none;
+}
+
+.path {
+    color: blue;
+}

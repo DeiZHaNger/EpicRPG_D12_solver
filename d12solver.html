@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="d12solver.css">
+    <title>Epic RPG D12 Solver</title>
+</head>
+<body>
+    <main>
+        <h1>Dungeon 12 Solver</h1>
+
+        <p id="ongoing" class="hidden">Be patient. Ongoing resolution...</p>
+        <form action="#">
+
+            <legend>Dungeon Grid</legend>
+            <p>
+                White Box - White Border = 0<br>
+                White Box - Black Border = 1<br>
+                Black Box - White Border = 2<br>
+                Black Box - Black Border = 3
+            </p>
+
+            <div class="dungeon-grid">
+                <div>
+                    <input type="number" name="box00" id="box00" min="0" max="3" value="3">
+                    <input type="number" name="box01" id="box01" min="0" max="3" value="2">
+                    <input type="number" name="box02" id="box02" min="0" max="3" value="0">
+                </div>
+
+                <div>
+                    <input type="number" name="box10" id="box10" min="0" max="3" value="1">
+                    <input type="number" name="box11" id="box11" min="0" max="3" value="0" disabled>
+                    <input type="number" name="box12" id="box12" min="0" max="3" value="1">
+                </div>
+
+                <div>
+                    <input type="number" name="box20" id="box20" min="0" max="3" value="0">
+                    <input type="number" name="box21" id="box21" min="0" max="3" value="0">
+                    <input type="number" name="box22" id="box22" min="0" max="3" value="0">
+                </div>
+            </div>
+
+            <div class="player-stats">
+                <div>
+                    <label for="defense">Defense</label>
+                    <input type="number" name="defense" id="defense" min="0" value="701">
+                </div>
+
+                <div>
+                    <label for="health">Health Points</label>
+                    <input type="number" name="health" id="health" min="0" value="846">
+                </div>
+            </div>
+
+            <input type="submit" value="Apply">
+            <input type="reset" value="Reset">
+            
+        </form>
+
+        <div>
+            <button id="solve" class="hidden">Solve</button>
+            <p id="path" class="path"></p>
+        </div>
+    </main>
+    
+    <script src="d12solver.js"></script>
+</body>
+</html>
