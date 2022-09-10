@@ -96,8 +96,8 @@ function applyBoxEffect() {
     player.orbs += boxEffects[playgrid[player.pos[0]][player.pos[1]]].orbs;
     player.orbs = Math.max(0, player.orbs);
     player.hp -= boxEffects[playgrid[player.pos[0]][player.pos[1]]].dmg;
-    player.hp -= player.def > 700 ? 30 : 60;
-    alive = player.hp > 0;
+    player.hp -= player.dragonDmg;
+    alive = player.hp - (player.dragonDmg + boxEffects[3].dmg) * (10 - player.orbs) > 0; // check if there are still enough hp to pick up remaining orbs
 }
 
 function updateGrid() {
@@ -129,6 +129,7 @@ buildForm.addEventListener('submit', function (ev) {
     player.hp = buildForm.health.valueAsNumber;
     player.orbs = 0;
     player.pos = [1, 1];
+    player.dragonDmg = player.def > 700 ? 30 : 60;
 
     solved = false;
     alive = true;
